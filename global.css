@@ -1,0 +1,204 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+.header {
+  background-color: #f8f8f8;
+  padding: 0.625rem;
+  text-align: center;
+  height: 4.0625rem;
+  border: solid black;
+}
+
+.container {
+  background-color: #333333;
+  height: 29.8125rem;
+  background: radial-gradient(ellipse at center, #005ea1 0%, #333333 63%);
+  width: 100%;
+}
+
+.banner {
+  position: relative;
+  margin: 0 auto;
+  overflow: visible;
+  width: 80.625rem;
+  z-index: 1;
+}
+
+@media (max-width: 1200px) {
+  .banner {
+    width: 60rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .banner {
+    width: 50rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .banner {
+    width: 40rem;
+  }
+}
+
+.banner-items {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+}
+
+.banner-item {
+  position: relative;
+  margin-right: 1.25rem;
+}
+
+.banner-item:not(:first-child) {
+  margin-left: -3rem;
+}
+
+.banner-item:first-child .banner-image,
+.banner-item:first-child .banner-text {
+  left: 0.25rem;
+}
+
+.banner-item:first-child .banner-text {
+  width: 75%;
+}
+
+.banner-image {
+  overflow: visible;
+  transform: skew(-5deg);
+  margin-top: 6.35rem;
+  min-width: 15.625rem;
+  transition: transform 1.5s ease, z-index 0.5s ease;
+}
+
+.banner-image img {
+  transform: skew(5deg);
+  width: 100%;
+  height: auto;
+  transition: transform 1.5s ease, content 0s;
+  cursor: pointer;
+  position: absolute;
+}
+
+.banner-text {
+  background-color: rgba(100, 100, 100, 0.5);
+  bottom: 6.4375rem;
+  font-size: 0.875rem;
+  margin-left: 9%;
+  padding: 0.5rem 0;
+  position: absolute;
+  width: 75%;
+  transform: skew(-3deg);
+  color: white;
+  text-align: center;
+  transition: background-color 1.5s ease;
+  height: 2.5rem;
+  cursor: pointer;
+}
+
+.banner-text::after {
+  border-style: solid;
+  border-width: 0 1.25rem 0.9375rem 1.25rem;
+  border-color: transparent transparent rgba(100, 100, 100, 0.5) transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  top: -0.95rem;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: border-color 1.5s ease;
+}
+
+.banner-item:hover .banner-text {
+  background: rgba(63, 150, 203, 0.7);
+  width: 12.6875rem;
+  margin-left: 0;
+  top: 81%;
+  right: 22%;
+  left: 5%;
+  z-index: 50;
+}
+
+.banner-item:hover .banner-text::after {
+  border-color: transparent transparent rgba(63, 150, 203, 0.7) transparent;
+}
+
+.banner-item:hover .banner-image img {
+  transform: scale(1.1) skew(5deg);
+  z-index: 1;
+}
+
+.banner-item:hover .overlay {
+  opacity: 1;
+  background: rgba(63, 150, 203, 0.7);
+  left: -0.175rem;
+  width: 76%;
+  bottom: 1rem;
+  position: absolute;
+}
+
+.overlay {
+  position: absolute;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 1.5s, transform 1.5s;
+}
+
+.main {
+  text-align: center;
+  height: 100vh;
+}
+
+@media (min-width: 48rem) {
+  .banner-items {
+    justify-content: center;
+  }
+
+  .banner-item:not(:first-child) {
+    margin-left: -4rem;
+  }
+
+  .banner-image {
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 64rem) {
+  .banner-image {
+    height: 36.25rem;
+  }
+}
+
+.banner-item:nth-child(1):hover .banner-image img {
+  content: url("images/banner-russell-b.png");
+}
+
+.banner-item:nth-child(2):hover .banner-image img {
+  content: url("images/banner-melissa-b.png");
+}
+
+.banner-item:nth-child(3):hover .banner-image img {
+  content: url("images/banner-cynthia-b.png");
+}
+
+.banner-item:nth-child(4):hover .banner-image img {
+  content: url("images/banner-luis-b.png");
+}
+
+.banner-item:nth-child(5):hover .banner-image img {
+  content: url("images/banner-elijah-b.png");
+}
+
+.banner-item:nth-child(6):hover .banner-image img {
+  content: url("images/banner-mia-b.png");
+}
